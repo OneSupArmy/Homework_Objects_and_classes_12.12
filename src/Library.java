@@ -25,7 +25,7 @@ public class Library {
             }
         }
     }
-    public void addBookInBase() {
+    public void addBook() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Write the author name");
         String newAuthorName = scanner.nextLine();
@@ -44,7 +44,7 @@ public class Library {
             }
         }
     }
-    public void addBookInBase(Book newFullBook) {
+    public void addBook(Book newFullBook) {
         for (int i = 0; i < booksBase.length; i++) {
             if (booksBase[i] == null) {
                 booksBase[i] = newFullBook;
@@ -68,5 +68,13 @@ public class Library {
                 break;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        String tempResult = "Library: ";
+        for (int i = 0; i < booksBase.length && booksBase[i] != null; i++)
+            tempResult += "\n" + booksBase[i].toString();
+        return tempResult;
     }
 }
